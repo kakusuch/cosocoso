@@ -1,0 +1,108 @@
+@charset "UTF-8";
+
+/* ==========================================
+   CSS変数（ミニマルスタイル）
+   ========================================== */
+:root {
+    --color-primary: #23282d;
+    --color-text: #333333;
+    --color-text-muted: #777777;
+    --color-bg: #ffffff;
+    --color-bg-gray: #f8f9fa;
+    --color-border: #e6ecf0;
+    
+    --font-base: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    
+    --container-max: 1040px;
+    --header-height: 64px;
+}
+
+/* ==========================================
+   リセットCSS & 基本設定
+   ========================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-base);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+/* ==========================================
+   共通レイアウト構造
+   ========================================== */
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==========================================
+   ヘッダー（ミニマル版）
+   ========================================== */
+.header {
+    height: var(--header-height);
+    background-color: var(--color-bg);
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid var(--color-border);
+    z-index: 1000;
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.header__logo {
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: -0.05em;
+    color: var(--color-primary);
+}
+
+/* フッター */
+.footer {
+    background-color: var(--color-bg-gray);
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    padding: 40px 0;
+    text-align: center;
+    font-size: 0.8rem;
+    margin-top: 80px;
+}
+
+.footer__links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.footer__links a:hover {
+    text-decoration: underline;
+}
